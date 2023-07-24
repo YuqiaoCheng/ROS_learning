@@ -1,0 +1,31 @@
+<robot name="mycar">
+    <link name="link_name">
+        <visual>
+            <geometry>
+                <box size="0.5 0.3 0.1"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name = "yellow">
+                <color rgba="0.5 0.3 0.0 0.5"/>
+            </material>
+        </visual>
+        <!-- 如果是标准几何体，直接复制visual 的geometry 和 origin 就ok -->
+        <collision>
+            <geometry>
+                <box size="0.5 0.3 0.1"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>      
+        </collision>
+        <!-- inertial -->
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="2"/>
+            <!-- 这个是要通过计算的 -->
+            <inertia ixx="0.0" ixy="1.0" ixz="0.0" iyy="0.0" iyz="1.0" izz="1.0"/>
+        </inertial>
+        <!-- gazebo 有自己的颜色设置标签 -->
+    </li nk>
+    <gazebo reference ="base_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+</robot>
